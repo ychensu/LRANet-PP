@@ -1,0 +1,8 @@
+setup.py
+./src/GridSamplerBatch.cpp
+./src/GridSamplerBatch_cuda.cu
+./src/grid_sampler.cpp
+custom.egg-info/PKG-INFO
+custom.egg-info/SOURCES.txt
+custom.egg-info/dependency_links.txt
+custom.egg-info/top_level.txt
