@@ -7,12 +7,12 @@
 This is the official implementation of Paper: [LRANet++: Low-Rank Approximation Network for Accurate and Efficient Text Spotting](https://arxiv.org/abs/2511.05818.pdf).
 
 ## Environment
-This implementation is based on mmocr-0.2.1, so please refer to it for detailed requirements. Our code has been test with Pytorch-1.8.1 + cuda11.1
+This implementation is based on mmocr-0.2.1, so please refer to it for detailed requirements. Our code has been tested with Pytorch-1.8.1 + cuda11.1
 We recommend using [Anaconda](https://www.anaconda.com/) to manage environments. Run the following commands to install dependencies.
 ```
 conda create -n lranet_pp python=3.7 -y
 conda activate lranet_pp
- conda install pytorch=1.8 torchvision cudatoolkit=11.1 -c pytorch -c nvidia -c conda-forge
+conda install pytorch=1.8 torchvision cudatoolkit=11.1 -c pytorch -c nvidia -c conda-forge
 pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 pip install mmdet==2.15.1
 git clone https://github.com/ychensu/LRANet-PP
@@ -32,9 +32,7 @@ python setup.py build develop
 - Total-Text [[image]](https://drive.google.com/file/d/1R6EXhWHbJnRnSbIMfS-DJ6syKtx0ppr6/view?usp=drive_link)
 
 
-The prepared annotations can be download from [Google Drive](https://drive.google.com/drive/folders/1ZNsd49I2M7BPwTo_9OHRraQpvRSOT_kO?usp=sharing)
-
-
+The prepared annotations can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1ZNsd49I2M7BPwTo_9OHRraQpvRSOT_kO?usp=sharing)
 
 Please download and extract the above datasets into the `data` folder following the file structure below.
 ```
@@ -60,6 +58,12 @@ data
          └─train_images
 ```
 
+## Generate LRA Basis (Optional)
+```
+python orthanchors/generate_lra.py --json_path <your_json_path> --output_dir <output_dir>
+```
+
+
 ## Train
 ### Pretrain
 ```
@@ -81,7 +85,6 @@ CUDA_VISIBLE_DEVICES=0 python tools/test.py configs/lranet_pp/lranet_pp_totaltex
 Pretrain: [OneDrive](https://1drv.ms/u/c/5aa69fbe58464061/IQAH8ZP_LJw4R6j9nMoUFw-fAcuW3mdI5eo5h8kPg30TGzc?e=xEtpTG)
 Total-Text : [OneDrive](https://1drv.ms/u/c/5aa69fbe58464061/IQAz-BfPQKuZTKjs8tPpor5AATNt4ogaHSeYUOgi-r1VqCs?e=23EdwX)
 CTW1500: [OneDrive](https://1drv.ms/u/c/5aa69fbe58464061/IQDJa-bLosXBS51ijQdseJrGAVxe3V2KVmBlStnflnqsESI?e=r57sbi)
-
 
 
 
